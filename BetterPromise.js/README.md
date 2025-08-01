@@ -1,5 +1,4 @@
 ## BetterPromise.js
----
 #### Example实例：
 ```javascript
 const bp = new BetterPromise({
