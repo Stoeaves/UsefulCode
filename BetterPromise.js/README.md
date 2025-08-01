@@ -49,7 +49,7 @@ const bp = new BetterPromise(options);
 ###### 函数：
 | 函数 | 参数 | 返回 | 作用 |
 | :--- | :--- | :--- | :--- |
-| bp.add() | taskFn（任务函数）: Function、metadata（任务元数据）: Object | 无 | 添加任务 |
+| bp.add() | taskFn: Function（任务函数）、metadata: Object（任务元数据） | 无 | 添加任务 |
 | bp.start() | 无 | 无 | 开始执行任务 |
 | bp.pause() | 无 | 无 | 暂停执行任务（已开始执行的无法暂停） |
 | bp.resume() | 无 | 无 | 恢复执行任务 |
