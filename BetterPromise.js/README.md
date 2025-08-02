@@ -49,7 +49,7 @@ const bp = new BetterPromise(options);
 ###### 函数：
 | 函数 | 参数 | 返回 | 作用 |
 | :--- | :--- | :--- | :--- |
-| bp.add() | taskFn: Function（任务函数）、metadata: Object（任务元数据） | 无 | 添加任务 |
+| bp.add(taskFn, metadata) | taskFn: Function（任务函数）、metadata: Object（任务元数据） | 无 | 添加任务（注意事项看下面） |
 | bp.start() | 无 | 无 | 开始执行任务 |
 | bp.pause() | 无 | 无 | 暂停执行任务（已开始执行的无法暂停） |
 | bp.resume() | 无 | 无 | 恢复执行任务 |
@@ -57,3 +57,13 @@ const bp = new BetterPromise(options);
 | bp.getStats() | 无 | Object | 获取状态信息 |
 | bp.getAllResults() | 无 | Map | 获取所有任务执行完毕后的结果 |
 | bp.getTaskStatus(taskId) | taskId: Number（任务ID） | Object 或 null | 获取某一任务的状态信息 |
+#### 温馨提示：
+##### bp.add(taskFn, metadata)的taskFn最好写成如下形式：
+```javascript
+bp.add(()=>{
+  return new Promise((resolve, reject) => {
+    // 其他代码
+  })
+})
+```
+##### taskFn必须返回一个Promise！
