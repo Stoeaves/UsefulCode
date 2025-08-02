@@ -332,14 +332,14 @@ class BetterPromise {
      * 报告进度
      */
     _reportProgress() {
-        this.onProgress(this.completedCount + this.failedCount, this.totalTasks);
+        this.onProgress(this.completedCount, this.totalTasks);
     }
     
     /**
      * 检查所有任务是否完成
      */
     _checkCompletion() {
-        if (this.completedCount + this.failedCount === this.totalTasks) {
+        if (this.completedCount === this.totalTasks) {
             this.onComplete();
             this.isActive = false;
         }
